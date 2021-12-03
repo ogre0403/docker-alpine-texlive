@@ -16,9 +16,8 @@ RUN apk --no-cache add perl wget \
 	cd && rm -rf /tmp/install-tl-unx
 
 # Install basic collection and additional packages
-RUN apk --no-cache add perl wget && \
-	tlmgr install collection-latex collection-latexextra collection-langspanish \
-	bytefield algorithms algorithm2e ec fontawesome && \
+RUN apk --no-cache add perl wget git bash && \
+	tlmgr install collection-latex collection-latexextra collection-fontsrecommended && \
 	apk del perl wget && \
 	mkdir /workdir
 
